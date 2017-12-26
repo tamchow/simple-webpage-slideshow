@@ -1,0 +1,32 @@
+@import url("slideshow_noanim.css");
+
+/*
+    Adds a nice rotation effect to get around CSS-jQuery animation timing synchronization issues.
+*/
+
+.slideshow-container {
+    --slideshow-transition-delay: 600ms;
+    --slideshow-hidden-height: calc(0.6 * 500px);
+    --slideshow-hidden-width: calc(0.6 * 50vw);
+}
+
+.slideshow img {
+    width: var(--slideshow-hidden-width);
+    height: var(--slideshow-hidden-height);
+    top: 0;
+    transform: rotateY(90deg);
+    transition: width var(--slideshow-transition-delay), transform var(--slideshow-transition-delay), height var(--slideshow-transition-delay), opacity var(--slideshow-transition-delay);
+    transition-timing-function: ease-out;
+}
+
+.slideshow img.curr {
+    width: var(--slideshow-width);
+    height: var(--slideshow-height);
+    transform: rotateY(0deg);
+    transition: width var(--slideshow-transition-delay), transform var(--slideshow-transition-delay), height var(--slideshow-transition-delay), opacity var(--slideshow-transition-delay);
+    transition-timing-function: ease-in;
+}
+
+.slideshow-indicator {
+    --slideshow-indicator-transition-delay: var(--slideshow-transition-delay);
+}

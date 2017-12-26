@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Slideshow Example</title>
+    <link rel="stylesheet" href="css/slideshow_anim.css" />
+    <link rel="stylesheet" href="css/slideshow_example.css" />
+</head>
+
+<body>
+    <main>
+        <section class="slideshow-container" id="slideshow1">
+            <button class="previous"><span> &#8249; </span></button>
+            <div class="slideshow">
+                <img src="images/sli1/csi1.jpg" class="curr" />
+                <img src="images/sli1/csi2.jpg" />
+                <img src="images/sli1/csi3.jpg" />
+                <img src="images/sli1/csi4.jpg" />
+                <img src="images/sli1/csi5.jpg" />
+                <img src="images/sli1/csi6.jpg" />
+                <img src="images/sli1/csi7.jpg" />
+            </div>
+            <div class="slideshow-indicator"></div>
+            <button class="next"><span> &#8250; </span></button>
+        </section>
+        <section class="slideshow-container" id="slideshow2">
+            <button class="previous"><span> &#8249; </span></button>
+            <div class="slideshow">
+                <img src="images/hmgy/hmgy1.png" class="curr" />
+                <img src="images/b2.jpg" />
+                <img src="images/b3.jpg" />
+            </div>
+            <div class="slideshow-indicator"></div>
+            <button class="next"><span> &#8250; </span></button>
+        </section>
+        <section class="slideshow-container" id="slideshow3">
+            <button class="previous"> &#8249; </button>
+            <div class="slideshow">
+                <img src="images/misc/oe1.jpg" class="curr" />
+                <img src="images/misc/oe2.jpg" />
+                <img src="images/misc/oe3.jpg" />
+            </div>
+            <div class="slideshow-indicator"></div>
+            <button class="next"><span> &#8250; </span></button>
+        </section>
+    </main>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/slideshow_base.js"></script>
+    <script src="js/slideshow_css.js"></script>
+</body>
+
+</html>

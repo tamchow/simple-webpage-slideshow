@@ -1,0 +1,100 @@
+*:focus {
+    outline: none;
+}
+
+.slideshow-container {
+    position: absolute;
+    display: inline-block;
+    --slideshow-height: 500px;
+    --slideshow-width: 50vw;
+    width: var(--slideshow-width);
+    height: var(--slideshow-height);
+}
+
+.slideshow img {
+    position: absolute;
+    z-index: 5002;
+    opacity: 0;
+    width: var(--slideshow-width);
+    height: var(--slideshow-height);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slideshow img.curr {
+    z-index: 5003;
+    opacity: 1;
+}
+
+.slideshow-indicator {
+    position: absolute;
+    --slideshow-indicator-transition-delay: 0.3s;
+    --slideshow-indicator-gap: 2px;
+    --slideshow-indicator-base-radius: 10px;
+    --slideshow-indicator-focus-radius: calc(1.5 * var(--slideshow-indicator-base-radius));
+    --slideshow-indicator-base-color: white;
+    --slideshow-indicator-focus-color: gold;
+    bottom: var(--slideshow-indicator-gap);
+    z-index: 5005;
+}
+
+.slideshow-indicator div {
+    display: inline-block;
+    width: var(--slideshow-indicator-base-radius);
+    height: var(--slideshow-indicator-base-radius);
+    padding: var(--slideshow-indicator-gap);
+    background-color: var(--slideshow-indicator-base-color);
+    border: 1px solid grey;
+    border-radius: 50%;
+    transition: width var(--slideshow-indicator-transition-delay), height var(--slideshow-indicator-transition-delay), background var(--slideshow-indicator-transition-delay);
+    transition-timing-function: ease-out;
+}
+
+.slideshow-indicator div.curr {
+    width: var(--slideshow-indicator-focus-radius);
+    height: var(--slideshow-indicator-focus-radius);
+    background-color: var(--slideshow-indicator-focus-color);
+    transition: width var(--slideshow-indicator-transition-delay), height var(--slideshow-indicator-transition-delay), background var(--slideshow-indicator-transition-delay);
+    transition-timing-function: ease-in;
+}
+
+.previous,
+.next {
+    position: absolute;
+    color: white;
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    top: 200px;
+    font-family: sans-serif;
+    font-size: 35px;
+    border: none;
+    border-radius: 50%;
+    opacity: 0.8;
+    z-index: 5005;
+    text-align: center;
+}
+
+.previous:hover,
+.next:hover {
+    color: gold;
+    background: radial-gradient(#333333 15%, black 75%);
+}
+
+.previous {
+    left: -50px;
+    box-shadow: 3px 0px 5px 2px black;
+}
+
+.previous:hover {
+    box-shadow: 3px -3px 5px 5px #222222 inset;
+}
+
+.next {
+    left: calc(50vw - 50px);
+    box-shadow: -3px 0px 5px 2px black;
+}
+
+.next:hover {
+    box-shadow: -3px -3px 5px 5px #222222 inset;
+}
