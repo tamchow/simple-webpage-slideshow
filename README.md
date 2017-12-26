@@ -1,5 +1,15 @@
-# Simple Webpage Slideshow
+# [Simple Webpage Slideshow](https://github.com/tamchow/simple-webpage-slideshow)
 Simple JS (ES6) and CSS(3) based image slideshows for webpages.
+
+## In Action
+1. Plain jQuery version [here](https://tamchow.github.io/simple-webpage-slideshow/slideshow_base_example.html)
+2. jQuery + CSS transitions for best of both worlds [here](https://tamchow.github.io/simple-webpage-slideshow/slideshow_css_example.html)
+
+## Features
+1. Position indicator with click-to-seek
+2. Previous and next buttons with wrap on overflow (infinite slideshow)
+3. Right-click on previous button to go to the first and on next button to go to the last image in a slideshow
+4. Cool, depth-effect transitions
 
 ## Compatibility
 Uses only standard CSS with no vendor prefixes, so may not be compatible with older browsers. 
