@@ -163,11 +163,12 @@ function goToStart(slideshowIndex, newImageFromRight) {
 }
 
 $(document).ready(function() {
-    slideshowIndicators.each(function(index, element) {
-        const slideshow = $(this).prev(".slideshow");
+    slideshowIndicators.each(function(_, slideshowIndicator) {
+        const $slideshowIndicator = $(slideshowIndicator);
+        const slideshow = $slideshowIndicator.prev(".slideshow");
         const imagesInSlideshow = slideshow.find("img").length;
-        $(this).html("<div />\n".repeat(imagesInSlideshow));
-        $(this).css("margin-left", "calc(50% - " + ($(this).width() / 2) + "px)");
+        $slideshowIndicator.html("<div />\n".repeat(imagesInSlideshow));
+        $slideshowIndicator.css("margin-left", "calc(50% - " + ($slideshowIndicator.width() / 2) + "px)");
         const currentImage = getCurrentImageInSlideshow(slideshow);
         getIndicator(currentImage).addClass("curr");
     });
@@ -181,19 +182,22 @@ $(document).ready(function() {
 });
 
 slideshowIndicators.on("click", "div", function() {
-    const slideshow = $(this).parent().prev(".slideshow");
+    const slideshowIndicatorElement =  $(this);
+    const slideshowIndicator = slideshowIndicatorElement.parent();
+    const slideshow = slideshowIndicator.prev(".slideshow");
     const slideshowIndex = slideshows.index(slideshow);
-    const imageIndex = $(this).parent().find("div").index($(this));
+    const imageIndex = slideshowIndicator.find("div").index(slideshowIndicatorElement);
     const nextImage = slideshow.find("img").eq(imageIndex);
     const currentImage = getCurrentImage(slideshowIndex);
     update(slideshowIndex, currentImage, nextImage);
 });
 
 slideshowContainers.each(function(index, element) {
-    const previousButton = $(this).find("button.previous");
+    const slideshowContainer = $(this);
+    const previousButton = slideshowContainer.find("button.previous");
     previousButton.click(function() { previous(index) });
     previousButton.contextmenu(function() { goToStart(index) });
-    const nextButton = $(this).find("button.next");
+    const nextButton = slideshowContainer.find("button.next");
     nextButton.click(function() { next(index) });
     nextButton.contextmenu(function() { goToEnd(index) });
 });

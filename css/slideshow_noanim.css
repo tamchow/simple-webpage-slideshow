@@ -46,7 +46,7 @@
     background-color: var(--slideshow-indicator-base-color);
     border: 1px solid grey;
     border-radius: 50%;
-    transition: width var(--slideshow-indicator-transition-delay), height var(--slideshow-indicator-transition-delay), background var(--slideshow-indicator-transition-delay);
+    transition: width var(--slideshow-indicator-transition-delay), height var(--slideshow-indicator-transition-delay), background-color var(--slideshow-indicator-transition-delay);
     transition-timing-function: ease-out;
 }
 
@@ -54,7 +54,7 @@
     width: var(--slideshow-indicator-focus-radius);
     height: var(--slideshow-indicator-focus-radius);
     background-color: var(--slideshow-indicator-focus-color);
-    transition: width var(--slideshow-indicator-transition-delay), height var(--slideshow-indicator-transition-delay), background var(--slideshow-indicator-transition-delay);
+    transition: width var(--slideshow-indicator-transition-delay), height var(--slideshow-indicator-transition-delay), background-color var(--slideshow-indicator-transition-delay);
     transition-timing-function: ease-in;
 }
 
@@ -70,7 +70,7 @@
     font-size: 35px;
     border: none;
     border-radius: 50%;
-    opacity: 0.8;
+    opacity: 0.6;
     z-index: 5005;
     text-align: center;
 }
@@ -82,7 +82,7 @@
 }
 
 .previous {
-    left: -50px;
+    left: 10px;
     box-shadow: 3px 0px 5px 2px black;
 }
 
@@ -91,7 +91,7 @@
 }
 
 .next {
-    left: calc(50vw - 50px);
+    right: 10px;
     box-shadow: -3px 0px 5px 2px black;
 }
 
